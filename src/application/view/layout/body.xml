@@ -142,7 +142,7 @@
                 </Column>
 
                 <Column width="auto">
-                    <Text class="h6 text-uppercase mb-3">Servizi & Legale</Text>
+                    <Text class="h6 text-uppercase mb-3">Servizi Legale</Text>
                     <Group type="list" class="list-group-flush bg-dark text-white">
                         <Action type="link" route="/legal/terms" class="list-group-item bg-dark text-white">Termini e condizioni d'uso</Action>
                         <Action type="link" route="/legal/privacy" class="list-group-item bg-dark text-white">Privacy</Action>
