@@ -36,7 +36,7 @@
             <Action type="dropdown" tooltip="Account" id="user-menu-dropdown">
                 <Row alignment-vertical="center" spacing="2">
                     <Media type="image" height="40px" src="https://app.colosso.cloud/static/logo.png" class="rounded-circle border" />
-                    <Text class="d-none d-lg-inline">{{user.email | default: 'Ospite'}}</Text> 
+                    <Text class="d-none d-lg-inline">{{user.email | 'Ospite'}}</Text> 
                 </Row>
                 
                 <Column width="200px">
