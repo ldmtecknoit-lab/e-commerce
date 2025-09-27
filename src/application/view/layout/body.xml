@@ -78,7 +78,12 @@
         <Action type="dropdown" tooltip="Help"><Text>Honor</Text></Action>
         <Action type="dropdown" tooltip="Help"><Text>Motorola</Text></Action>
         <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-three-dots-vertical"/></Action>
-        <Action type="dropdown" tooltip="Help"><Text>Accessori</Text></Action>
+        <Action type="dropdown" tooltip="Help">
+            <Text>Accessori</Text>
+            <Container width="500px" height="200px">
+            <Text>prova</Text>
+            </Container>
+        </Action>
         <Action type="dropdown" tooltip="Help"><Text>Protezioni</Text></Action>
         <Action type="dropdown" tooltip="Help"><Text>Informatica</Text></Action>
         <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-screwdriver"/><Text>Repairs</Text></Action>
@@ -92,7 +97,8 @@
     <Navigation class="bg-primary">
         <Column>
             <Media type="image" src="/assets/logo.png"/>
-            <Group type="list">
+            <Container>
+                <Group type="list">
                 <Text>Account</Text>
                 <Text>Miei ordini</Text>
                 <Text>Note di Credito</Text>
@@ -100,7 +106,9 @@
                 <Text>Info personali</Text>
                 <Text>Garanzia e Assistenza</Text>
                 <Text>Note legali</Text>
-            </Group>
+                </Group>
+            </Container>
+            <Container>
             <Group type="list">
                 <Text>Contattaci</Text>
                 <Text>Chi Siamo</Text>
@@ -110,6 +118,8 @@
                 <Text>Garanzia e Assistenza</Text>
                 <Text>Note legali</Text>
             </Group>
+            </Container>
+            <Container>
             <Group type="list">
                 <Text>Termini e condizioni d'uso</Text>
                 <Text>Privacy</Text>
@@ -119,6 +129,7 @@
                 <Text>Garanzia e Assistenza</Text>
                 <Text>Note legali</Text>
             </Group>
+            </Container>
         </Column>
         <Column>
             <Text>Copyright ©Tectronix 2025</Text>
