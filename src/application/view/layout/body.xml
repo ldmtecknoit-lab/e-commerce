@@ -1,155 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Column expand="full">
-
+    <!-- Header !-->
     <Data id="page-loader" type="progress" class="rounded-0 fixed-top" height="3px" value="0"/>
-
-    <Window type="still" id="settings" title="Impostazioni Utente" class="bg-light">
-        <Column padding="3">
-            <Text class="h4">Gestione Account</Text>
-            <Action type="button" class="mt-3">Logout</Action>
-        </Column>
+    <Window type="still" id="settings" title="Impostazioni">
+        <Text>TEST</Text>
     </Window>
-    <Window type="dialog" title="Crea un Account" id="auth-register" size="md">
-        <Text>Inserisci qui la form di Registrazione.</Text>
-    </Window>
-    <Window type="dialog" title="Accedi" id="auth-login" size="sm">
-        <Text>Inserisci qui la form di Login.</Text>
-    </Window>
-
-    <Navigation class="bg-primary text-white p-3" orientation="horizontal" alignment-content="between">
+    <Window type="dialog" title="Crea un Account" id="auth-login">
         
-        <Action type="link" route="/">
-            <Media type="image" src="/assets/logo.png" height="40px" class="d-inline-block" />
-            <Text class="h4 ms-2 d-none d-md-inline">TECTRONIX</Text> 
-        </Action>
+    </Window>
+    <Navigation class="bg-primary" orientation="horizontal" alignment-content="between" >
         
-        <Group type="input" class="d-flex" width="40%">
-            <Input type="search" placeholder="Cerca Prodotti, Marche, Categorie..." value="{{url}}" expand="full"/>
-            <Action type="submit" class="btn btn-dark ms-2"><Media type="icon" src="bi-search" /></Action>
+        <Group width="auto" expand="dynamic" padding="px-4">
+            <Input width="auto" type="search" value="{{url}}" />
+            <Action type="submit" class="border"><Media type="icon" src="bi-search" /></Action>
         </Group>
-        
-        <Container width="auto" alignment-content="end" spacing="2">
-            
-            <Action type="link" route="/cart" class="btn btn-outline-light border-0" tooltip="Vai al Carrello">
-                <Media type="icon" src="bi-cart" />
-                <Data type="text" class="badge bg-danger rounded-pill" value="" />
+        <Container width="auto" alignment-content="between" spacing="2">
+            <Action alignment-content="center" spacing="2" class="border">
+                <Media type="icon" src="bi-person-plus" />
+                <Text>Crea un account</Text>
             </Action>
-
-            <Action type="dropdown" tooltip="Account" id="user-menu-dropdown" class="btn btn-outline-light border-0">
-                <Row alignment-content="center" spacing="2"> <Media type="image" height="40px" src="https://app.colosso.cloud/static/logo.png" class="rounded-circle border" />
-                    <Text class="d-none d-lg-inline"></Text> 
-                </Row>
-                
-                <Column width="200px">
-                    <Action event-click="open_dialog('auth-register')" class="dropdown-item">
-                        <Media type="icon" src="bi-person-plus" /><Text class="ms-2">Crea un account</Text>
-                    </Action>
-                    <Action event-click="open_dialog('auth-login')" class="dropdown-item">
-                        <Media type="icon" src="bi-person-lock" /><Text class="ms-2">Accedi</Text>
-                    </Action>
-                    <Action route="/profile" class="dropdown-item">
-                        <Media type="icon" src="bi-person" /><Text class="ms-2">Profilo</Text>
-                    </Action>
-                    <Action route="/logout" class="dropdown-item text-danger">
-                        <Media type="icon" src="bi-box-arrow-right" /><Text class="ms-2">Esci</Text>
-                    </Action>
-                </Column>
+            <Action alignment-content="center" spacing="2" class="border">
+                <Media type="icon" src="bi-person-lock" />
+                <Text>Accedi</Text>
+            </Action>
+            <Action route="#offcanvasExample" alignment-content="center" class="d-inline-flex" spacing="2">
+                <Media type="image" height="40px" src="https://app.colosso.cloud/static/logo.png" class="rounded-circle border" />
+                <Text>{{user.email}}</Text>
             </Action>
         </Container>
     </Navigation>
-    
-    <Navigation orientation="horizontal" alignment-content="start" class="bg-body-tertiary border-bottom px-4 py-2 d-none d-lg-flex">
-        
-        <Action type="dropdown" tooltip="Visualizza tutti gli Accessori">
-            <Row alignment-content="center" spacing="1"><Media type="icon" src="bi-usb-plug"/><Text>Accessori</Text></Row>
-            <Container class="p-3" width="500px">
-                <Row spacing="4">
-                    <Column class="list-group-flush">
-                        <Action type="link" route="/cat/cuffie"><Text>Cuffie e Auricolari</Text></Action>
-                        <Action type="link" route="/cat/caricabatterie"><Text>Caricabatterie</Text></Action>
-                        <Action type="link" route="/cat/cover"><Text>Cover e Pellicole</Text></Action>
-                    </Column>
-                    <Column class="list-group-flush">
-                        <Action type="link" route="/cat/powerbank"><Text>Power Bank</Text></Action>
-                        <Action type="link" route="/cat/supporti"><Text>Supporti Auto/Bici</Text></Action>
-                        <Action type="link" route="/cat/cavi"><Text>Cavi</Text></Action>
-                    </Column>
-                    <Column class="list-group-flush">
-                        <Action type="link" route="/cat/smartwatch"><Text>Smartwatch</Text></Action>
-                        <Action type="link" route="/cat/domotica"><Text>Domotica</Text></Action>
-                        <Action type="link" route="/cat/altro"><Text>Altro</Text></Action>
-                    </Column>
-                </Row>
+    <Navigation orientation="horizontal" alignment-content="between" class="bg-body-tertiary border-bottom px-2">
+        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-bookmark-fill"/></Action>
+        <Action type="dropdown" tooltip="Help"><Text>Apple</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Text>Samsung</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Text>Xiaomi</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Text>Honor</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Text>Motorola</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-three-dots-vertical"/></Action>
+        <Action type="dropdown" tooltip="Help">
+            <Column><Media type="icon" src="bi-usb-plug"/><Text>Accessori</Text></Column>
+            bi-shield-shaded
+            <Container width="500px" height="200px">
+                <Column>
+                    <Group type="list">
+                        <Text>Termini e condizioni d'uso</Text>
+                        <Text>Privacy</Text>
+                        <Text>Spedizioni</Text>
+                        <Text>Pagamenti</Text>
+                        <Text>Politiche di Reso</Text>
+                        <Text>Garanzia e Assistenza</Text>
+                        <Text>Note legali</Text>
+                    </Group>
+                    <Group type="list">
+                        <Text>Termini e condizioni d'uso</Text>
+                        <Text>Privacy</Text>
+                        <Text>Spedizioni</Text>
+                        <Text>Pagamenti</Text>
+                        <Text>Politiche di Reso</Text>
+                        <Text>Garanzia e Assistenza</Text>
+                        <Text>Note legali</Text>
+                    </Group>
+                    <Group type="list">
+                        <Text>Termini e condizioni d'uso</Text>
+                        <Text>Privacy</Text>
+                        <Text>Spedizioni</Text>
+                        <Text>Pagamenti</Text>
+                        <Text>Politiche di Reso</Text>
+                        <Text>Garanzia e Assistenza</Text>
+                        <Text>Note legali</Text>
+                    </Group>
+                </Column>
             </Container>
         </Action>
-        
-        <Action type="link" route="/brand/apple" class="nav-link"><Text>Apple</Text></Action>
-        <Action type="link" route="/brand/samsung" class="nav-link"><Text>Samsung</Text></Action>
-        <Action type="link" route="/cat/ricondizionati" class="nav-link"><Text>Ricondizionati</Text></Action>
-        <Action type="link" route="/cat/novita" class="nav-link"><Text>Novità 🆕</Text></Action>
-        
-        <Action type="dropdown" tooltip="Tutta la Gamma Prodotti">
-            <Media type="icon" src="bi-grid"/>
-            <Column width="200px">
-                <Action type="link" route="/cat/informatica" class="dropdown-item"><Media type="icon" src="bi-laptop"/><Text class="ms-2">Informatica</Text></Action>
-                <Action type="link" route="/cat/pc" class="dropdown-item"><Media type="icon" src="bi-pc-display"/><Text class="ms-2">PC Desktop</Text></Action>
-                <Action type="link" route="/services/repairs" class="dropdown-item"><Media type="icon" src="bi-screwdriver"/><Text class="ms-2">Servizio Repairs</Text></Action>
-            </Column>
-        </Action>
+        <Action type="dropdown" tooltip="Help"><Column><Media type="icon" src="bi-usb-plug"/><Text>Protezioni</Text></Column></Action>
+        <Action type="dropdown" tooltip="Help"><Column><Media type="icon" src="bi-usb-plug"/><Text>Informatica</Text></Column></Action>
+        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-screwdriver"/><Text>Repairs</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-pc-display"/><Text>PC</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-laptop"/><Text>Laptops</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-phone"/><Text>Telephones</Text></Action>
     </Navigation>
-    
-    <Container type="fluid" class="container-fluid p-4">
-        {{ inner }}
-    </Container>
-    
-    <Navigation class="bg-dark text-white p-5 mt-auto">
-        <Container type="fixed" class="container">
-            <Row spacing="4" class="justify-content-between">
-                
-                <Column width="auto">
-                    <Media type="image" src="/assets/logo-white.png" height="50px"/>
-                    <Text class="mt-3">Seguici sui social:</Text>
-                    <Row spacing="2" alignment-content="horizontal" class="mt-2">
-                         <Action type="link" route="/social/fb"><Media type="icon" src="bi-facebook" class="h4"/></Action>
-                         <Action type="link" route="/social/ig"><Media type="icon" src="bi-instagram" class="h4"/></Action>
-                         <Action type="link" route="/social/tg"><Media type="icon" src="bi-telegram" class="h4"/></Action>
-                    </Row>
-                </Column>
-
-                <Column width="auto">
-                    <Text class="h6 text-uppercase mb-3">Il Mio Account</Text>
-                    <Group type="list" class="list-group-flush bg-dark text-white">
-                        <Action type="link" route="/account/profile" class="list-group-item bg-dark text-white"><Text>Info personali</Text></Action>
-                        <Action type="link" route="/account/orders" class="list-group-item bg-dark text-white"><Text>Miei ordini</Text></Action>
-                        <Action type="link" route="/account/address" class="list-group-item bg-dark text-white"><Text>Miei indirizzi</Text></Action>
-                        <Action type="link" route="/account/returns" class="list-group-item bg-dark text-white"><Text>Note di Credito</Text></Action>
-                    </Group>
-                </Column>
-
-                <Column width="auto">
-                    <Text class="h6 text-uppercase mb-3">Informazioni</Text>
-                    <Group type="list" class="list-group-flush bg-dark text-white">
-                        <Action type="link" route="/info/contatti" class="list-group-item bg-dark text-white"><Text>Contattaci</Text></Action>
-                        <Action type="link" route="/info/chisiamo" class="list-group-item bg-dark text-white"><Text>Chi Siamo</Text></Action>
-                        <Action type="link" route="/info/sitemap" class="list-group-item bg-dark text-white"><Text>SiteMap</Text></Action>
-                        <Action type="link" route="/info/pagamenti" class="list-group-item bg-dark text-white"><Text>Pagamenti</Text></Action>
-                    </Group>
-                </Column>
-
-                <Column width="auto">
-                    <Text class="h6 text-uppercase mb-3">Servizi &amp; Legale</Text>
-                    <Group type="list" class="list-group-flush bg-dark text-white">
-                        <Action type="link" route="/legal/terms" class="list-group-item bg-dark text-white"><Text>Termini e condizioni d'uso</Text></Action>
-                        <Action type="link" route="/legal/privacy" class="list-group-item bg-dark text-white"><Text>Privacy</Text></Action>
-                        <Action type="link" route="/legal/shipping" class="list-group-item bg-dark text-white"><Text>Spedizioni &amp; Reso</Text></Action>
-                        <Action type="link" route="/legal/warranty" class="list-group-item bg-dark text-white"><Text>Garanzia e Assistenza</Text></Action>
-                    </Group>
-                </Column>
-            </Row>
-
-            <Row alignment-content="center" class="mt-5 pt-3 border-top border-secondary">
-                <Text class="text-secondary small">Copyright © Tectronix 2025 - Tutti i diritti riservati.</Text>
-            </Row>
-        </Container>
+    <!-- Content !-->
+    {{ inner }}
+    <!-- Footer !-->
+    <Navigation class="bg-primary">
+        <Column>
+            <Media type="image" src="/assets/logo.png"/>
+            <Container>
+                <Group type="list">
+                <Text>Account</Text>
+                <Text>Miei ordini</Text>
+                <Text>Note di Credito</Text>
+                <Text>Miei indirizzi</Text>
+                <Text>Info personali</Text>
+                <Text>Garanzia e Assistenza</Text>
+                <Text>Note legali</Text>
+                </Group>
+            </Container>
+            <Container>
+            <Group type="list">
+                <Text>Contattaci</Text>
+                <Text>Chi Siamo</Text>
+                <Text>SiteMap</Text>
+                <Text>Pagamenti</Text>
+                <Text>Chat Telegram</Text>
+                <Text>Garanzia e Assistenza</Text>
+                <Text>Note legali</Text>
+            </Group>
+            </Container>
+            <Container>
+            <Group type="list">
+                <Text>Termini e condizioni d'uso</Text>
+                <Text>Privacy</Text>
+                <Text>Spedizioni</Text>
+                <Text>Pagamenti</Text>
+                <Text>Politiche di Reso</Text>
+                <Text>Garanzia e Assistenza</Text>
+                <Text>Note legali</Text>
+            </Group>
+            </Container>
+        </Column>
+        <Column>
+            <Text>Copyright ©Tectronix 2025</Text>
+        </Column>
     </Navigation>
 </Column>
