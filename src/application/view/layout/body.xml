@@ -146,7 +146,7 @@
                     <Group type="list" class="list-group-flush bg-dark text-white">
                         <Action type="link" route="/legal/terms" class="list-group-item bg-dark text-white">Termini e condizioni d'uso</Action>
                         <Action type="link" route="/legal/privacy" class="list-group-item bg-dark text-white">Privacy</Action>
-                        <Action type="link" route="/legal/shipping" class="list-group-item bg-dark text-white">Spedizioni & Reso</Action>
+                        <Action type="link" route="/legal/shipping" class="list-group-item bg-dark text-white">Spedizioni  Reso</Action>
                         <Action type="link" route="/legal/warranty" class="list-group-item bg-dark text-white">Garanzia e Assistenza</Action>
                     </Group>
                 </Column>
