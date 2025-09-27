@@ -30,7 +30,7 @@
             
             <Action type="button" class="btn btn-outline-light border-0" tooltip="Vai al Carrello">
                 <Media type="icon" src="bi-cart" />
-                <Data type="text" class="badge bg-danger rounded-pill" value="{{cart.count or 0 }}" />
+                <Data type="text" class="badge bg-danger rounded-pill" value="0" />
             </Action>
 
             <Action type="dropdown" tooltip="Account" id="user-menu-dropdown">
