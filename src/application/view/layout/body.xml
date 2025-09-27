@@ -8,7 +8,7 @@
     <Window type="dialog" title="Crea un Account" id="auth-login">
         
     </Window>
-    <Navigation orientation="horizontal" alignment-content="between" class="bg-body-tertiary border-bottom px-2">
+    <Navigation class="bg-primary" orientation="horizontal" alignment-content="between" >
         <Navigation type="breadcrumb" alignment-content="center">
                 <Action type="link" route="{{url|route('dashboard')}}"><Media type="image" src="/assets/logo.png"/></Action>
                 <Input width="auto" type="select" event-change="route(`{{url|route('?org=${this.value}')}}`)" value="{{url.query.get('org',['SottoMonte'])[-1]}}">
@@ -70,10 +70,26 @@
             </Action>
         </Container>
     </Navigation>
+    <Navigation orientation="horizontal" alignment-content="between" class="bg-body-tertiary border-bottom px-2">
+        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-bookmark-fill"/></Action>
+        <Action type="dropdown" tooltip="Help"><Text>Apple</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Text>Samsung</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Text>Xiaomi</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Text>Honor</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Text>Motorola</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-three-dots-vertical"/></Action>
+        <Action type="dropdown" tooltip="Help"><Text>Accessori</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Text>Protezioni</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Text>Informatica</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-screwdriver"/><Text>Repairs</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-pc-display"/><Text>PC</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-laptop"/><Text>Laptops</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-phone"/><Text>Telephones</Text></Action>
+    </Navigation>
     <!-- Content !-->
     {{ inner }}
     <!-- Footer !-->
-    <Navigation>
+    <Navigation class="bg-primary">
         <Column>
             <Media type="image" src="/assets/logo.png"/>
             <Group type="list">
