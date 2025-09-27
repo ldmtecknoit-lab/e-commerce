@@ -39,10 +39,9 @@
         <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-three-dots-vertical"/></Action>
         <Action type="dropdown" tooltip="Help">
             <Column><Media type="icon" src="bi-usb-plug"/><Text>Accessori</Text></Column>
-            bi-shield-shaded
             <Container width="500px" height="200px">
-                <Column>
-                    <Group type="list">
+                <Row>
+                    <Group type="list" class="list-group-flush">
                         <Text>Termini e condizioni d'uso</Text>
                         <Text>Privacy</Text>
                         <Text>Spedizioni</Text>
@@ -51,7 +50,7 @@
                         <Text>Garanzia e Assistenza</Text>
                         <Text>Note legali</Text>
                     </Group>
-                    <Group type="list">
+                    <Group type="list" class="list-group-flush">
                         <Text>Termini e condizioni d'uso</Text>
                         <Text>Privacy</Text>
                         <Text>Spedizioni</Text>
@@ -60,7 +59,7 @@
                         <Text>Garanzia e Assistenza</Text>
                         <Text>Note legali</Text>
                     </Group>
-                    <Group type="list">
+                    <Group type="list" class="list-group-flush">
                         <Text>Termini e condizioni d'uso</Text>
                         <Text>Privacy</Text>
                         <Text>Spedizioni</Text>
@@ -69,23 +68,23 @@
                         <Text>Garanzia e Assistenza</Text>
                         <Text>Note legali</Text>
                     </Group>
-                </Column>
+                </Row>
             </Container>
         </Action>
-        <Action type="dropdown" tooltip="Help"><Column><Media type="icon" src="bi-usb-plug"/><Text>Protezioni</Text></Column></Action>
-        <Action type="dropdown" tooltip="Help"><Column><Media type="icon" src="bi-usb-plug"/><Text>Informatica</Text></Column></Action>
-        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-screwdriver"/><Text>Repairs</Text></Action>
-        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-pc-display"/><Text>PC</Text></Action>
-        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-laptop"/><Text>Laptops</Text></Action>
-        <Action type="dropdown" tooltip="Help"><Media type="icon" src="bi-phone"/><Text>Telephones</Text></Action>
+        <Action type="dropdown" tooltip="Help"><Row><Media type="icon" src="bi-shield-shaded"/><Text>Protezioni</Text></Row></Action>
+        <Action type="dropdown" tooltip="Help"><Row><Media type="icon" src="bi-usb-plug"/><Text>Informatica</Text></Row></Action>
+        <Action type="dropdown" tooltip="Help"><Row><Media type="icon" src="bi-screwdriver"/><Text>Repairs</Text></Row></Action>
+        <Action type="dropdown" tooltip="Help"><Row><Media type="icon" src="bi-pc-display"/><Text>PC</Text></Row></Action>
+        <Action type="dropdown" tooltip="Help"><Row><Media type="icon" src="bi-laptop"/><Text>Laptops</Text></Row></Action>
+        <Action type="dropdown" tooltip="Help"><Row><Media type="icon" src="bi-phone"/><Text>Telephones</Text></Row></Action>
     </Navigation>
     <!-- Content !-->
     {{ inner }}
     <!-- Footer !-->
     <Navigation class="bg-primary">
-        <Column>
+        <Row>
             <Media type="image" src="/assets/logo.png"/>
-            <Container>
+            <Container class="overflow-auto">
                 <Group type="list">
                 <Text>Account</Text>
                 <Text>Miei ordini</Text>
@@ -96,7 +95,7 @@
                 <Text>Note legali</Text>
                 </Group>
             </Container>
-            <Container>
+            <Container class="overflow-auto">
             <Group type="list">
                 <Text>Contattaci</Text>
                 <Text>Chi Siamo</Text>
@@ -107,7 +106,7 @@
                 <Text>Note legali</Text>
             </Group>
             </Container>
-            <Container>
+            <Container class="overflow-auto">
             <Group type="list">
                 <Text>Termini e condizioni d'uso</Text>
                 <Text>Privacy</Text>
@@ -118,9 +117,9 @@
                 <Text>Note legali</Text>
             </Group>
             </Container>
-        </Column>
-        <Column>
+        </Row>
+        <Row>
             <Text>Copyright ©Tectronix 2025</Text>
-        </Column>
+        </Row>
     </Navigation>
 </Column>
