@@ -84,7 +84,7 @@
                 <Text>Info personali</Text>
                 <Text>Garanzia e Assistenza</Text>
                 <Text>Note legali</Text>
-            <Group>
+            </Group>
             <Group type="list">
                 <Text>Contattaci</Text>
                 <Text>Chi Siamo</Text>
@@ -93,7 +93,7 @@
                 <Text>Chat Telegram</Text>
                 <Text>Garanzia e Assistenza</Text>
                 <Text>Note legali</Text>
-            <Group>
+            </Group>
             <Group type="list">
                 <Text>Termini e condizioni d'uso</Text>
                 <Text>Privacy</Text>
@@ -102,7 +102,7 @@
                 <Text>Politiche di Reso</Text>
                 <Text>Garanzia e Assistenza</Text>
                 <Text>Note legali</Text>
-            <Group>
+            </Group>
         </Column>
         <Column>
             <Text>Copyright ©Tectronix 2025</Text>
