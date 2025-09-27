@@ -32,12 +32,12 @@
             
             <Action type="link" route="/cart" class="btn btn-outline-light border-0" tooltip="Vai al Carrello">
                 <Media type="icon" src="bi-cart" />
-                <Data type="text" class="badge bg-danger rounded-pill" value="{{cart.count}}" />
+                <Data type="text" class="badge bg-danger rounded-pill" value="" />
             </Action>
 
             <Action type="dropdown" tooltip="Account" id="user-menu-dropdown" class="btn btn-outline-light border-0">
                 <Row alignment-content="center" spacing="2"> <Media type="image" height="40px" src="https://app.colosso.cloud/static/logo.png" class="rounded-circle border" />
-                    <Text class="d-none d-lg-inline">{{user.email}}</Text> 
+                    <Text class="d-none d-lg-inline"></Text> 
                 </Row>
                 
                 <Column width="200px">
