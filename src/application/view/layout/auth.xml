@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Window type="{% if not model %}root{% else %}inner{% endif %}" title="Colosso - App" layout="page" expand="full">
-    <Column expand="full">
-        {% block main %}
-        {% endblock %}
-    </Column>
-</Window>

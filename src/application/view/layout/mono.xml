@@ -1,4 +1,4 @@
-{% extends "auth.xml" %}
+{% extends "page.xml" %}
 {% block main %}
 <Row expand="dynamic" >
     {% block content %}
