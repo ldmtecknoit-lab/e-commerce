@@ -2,15 +2,15 @@
 <Column expand="full">
     <!-- Header !-->
     <Data id="page-loader" type="progress" class="rounded-0 fixed-top" height="3px" value="0"/>
-    <Window type="still" id="offcanvasExample">
+    <Window type="still" id="settings" title="Impostazioni">
         <Text>TEST</Text>
     </Window>
-    <Window type="dialog" title="Machine" id="window-ai">
+    <Window type="dialog" title="Crea un Account" id="auth-login">
         
     </Window>
     <Navigation orientation="horizontal" alignment-content="between" class="bg-body-tertiary border-bottom px-2">
         <Navigation type="breadcrumb" alignment-content="center">
-                <Action type="link" route="{{url|route('dashboard')}}"><Media type="image" height="35px" src="https://i.postimg.cc/Kz6yzgHt/20250828-1405-Logo-Paa-S-Trasparente-simple-compose-01k3r909szfba96gd6r8x984sc.png" /></Action>
+                <Action type="link" route="{{url|route('dashboard')}}"><Media type="image" src="/assets/logo.png"/></Action>
                 <Input width="auto" type="select" event-change="route(`{{url|route('?org=${this.value}')}}`)" value="{{url.query.get('org',['SottoMonte'])[-1]}}">
                     <Text value="Colosso">Colosso</Text>
                     <Text value="SottoMonte">SottoMonte</Text>
