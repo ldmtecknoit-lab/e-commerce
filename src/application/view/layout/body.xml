@@ -28,7 +28,7 @@
                 <Media type="image" height="40px" src="https://app.colosso.cloud/static/logo.png" class="rounded-circle border" />
                 <Text>{{user.email}}</Text>
             </Action>
-            {% if endif %}
+            {%  endif %}
         </Container>
     </Navigation>
     <Navigation orientation="horizontal" alignment-content="between" class="bg-body-tertiary border-bottom px-2">
