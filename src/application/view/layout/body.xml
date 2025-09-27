@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Column expand="full">
 
-    <Data id="page-loader" type="progress" class="rounded-0 fixed-top" height="3px" value="0" />
+    <Data id="page-loader" type="progress" class="rounded-0 fixed-top" height="3px" value="0"/>
 
     <Window type="still" id="settings" title="Impostazioni Utente" class="bg-light">
-        <Column padding="20px">
+        <Column padding="3">
             <Text class="h4">Gestione Account</Text>
             <Action type="button" class="mt-3">Logout</Action>
         </Column>
     </Window>
     <Window type="dialog" title="Crea un Account" id="auth-register" size="md">
-        </Window>
+        <Text>Inserisci qui la form di Registrazione.</Text>
+    </Window>
     <Window type="dialog" title="Accedi" id="auth-login" size="sm">
-        </Window>
+        <Text>Inserisci qui la form di Login.</Text>
+    </Window>
 
     <Navigation class="bg-primary text-white p-3" orientation="horizontal" alignment-content="between">
         
@@ -28,14 +30,14 @@
         
         <Container width="auto" alignment-content="end" spacing="2">
             
-            <Action type="button" class="btn btn-outline-light border-0" tooltip="Vai al Carrello">
+            <Action type="link" route="/cart" class="btn btn-outline-light border-0" tooltip="Vai al Carrello">
                 <Media type="icon" src="bi-cart" />
-                <Data type="text" class="badge bg-danger rounded-pill" value="0" />
+                <Data type="text" class="badge bg-danger rounded-pill" value="{{cart.count}}" />
             </Action>
 
-            <Action type="dropdown" tooltip="Account" id="user-menu-dropdown">
-                <Row alignment-vertical="center" spacing="2">
-                    <Media type="image" height="40px" src="https://app.colosso.cloud/static/logo.png" class="rounded-circle border" />
+            <Action type="dropdown" tooltip="Account" id="user-menu-dropdown" class="btn btn-outline-light border-0">
+                <Row alignment-content="center" spacing="2"> <Media type="image" height="40px" src="https://app.colosso.cloud/static/logo.png" class="rounded-circle border" />
+                    <Text class="d-none d-lg-inline">{{user.email}}</Text> 
                 </Row>
                 
                 <Column width="200px">
@@ -45,15 +47,8 @@
                     <Action event-click="open_dialog('auth-login')" class="dropdown-item">
                         <Media type="icon" src="bi-person-lock" /><Text class="ms-2">Accedi</Text>
                     </Action>
-                    
                     <Action route="/profile" class="dropdown-item">
                         <Media type="icon" src="bi-person" /><Text class="ms-2">Profilo</Text>
-                    </Action>
-                    <Action route="/orders" class="dropdown-item">
-                        <Media type="icon" src="bi-box-seam" /><Text class="ms-2">Miei Ordini</Text>
-                    </Action>
-                    <Action event-click="open_offcanvas('settings')" class="dropdown-item">
-                        <Media type="icon" src="bi-gear" /><Text class="ms-2">Impostazioni</Text>
                     </Action>
                     <Action route="/logout" class="dropdown-item text-danger">
                         <Media type="icon" src="bi-box-arrow-right" /><Text class="ms-2">Esci</Text>
@@ -62,27 +57,27 @@
             </Action>
         </Container>
     </Navigation>
-
+    
     <Navigation orientation="horizontal" alignment-content="start" class="bg-body-tertiary border-bottom px-4 py-2 d-none d-lg-flex">
         
         <Action type="dropdown" tooltip="Visualizza tutti gli Accessori">
-            <Row alignment-vertical="center" spacing="1"><Media type="icon" src="bi-usb-plug"/><Text>Accessori</Text></Row>
+            <Row alignment-content="center" spacing="1"><Media type="icon" src="bi-usb-plug"/><Text>Accessori</Text></Row>
             <Container class="p-3" width="500px">
                 <Row spacing="4">
                     <Column class="list-group-flush">
-                        <Action type="link" route="/cat/cuffie" class="list-group-item">Cuffie e Auricolari</Action>
-                        <Action type="link" route="/cat/caricabatterie" class="list-group-item">Caricabatterie</Action>
-                        <Action type="link" route="/cat/cover" class="list-group-item">Cover e Pellicole</Action>
+                        <Action type="link" route="/cat/cuffie"><Text>Cuffie e Auricolari</Text></Action>
+                        <Action type="link" route="/cat/caricabatterie"><Text>Caricabatterie</Text></Action>
+                        <Action type="link" route="/cat/cover"><Text>Cover e Pellicole</Text></Action>
                     </Column>
                     <Column class="list-group-flush">
-                        <Action type="link" route="/cat/powerbank" class="list-group-item">Power Bank</Action>
-                        <Action type="link" route="/cat/supporti" class="list-group-item">Supporti Auto/Bici</Action>
-                        <Action type="link" route="/cat/cavi" class="list-group-item">Cavi</Action>
+                        <Action type="link" route="/cat/powerbank"><Text>Power Bank</Text></Action>
+                        <Action type="link" route="/cat/supporti"><Text>Supporti Auto/Bici</Text></Action>
+                        <Action type="link" route="/cat/cavi"><Text>Cavi</Text></Action>
                     </Column>
                     <Column class="list-group-flush">
-                        <Action type="link" route="/cat/smartwatch" class="list-group-item">Smartwatch</Action>
-                        <Action type="link" route="/cat/domotica" class="list-group-item">Domotica</Action>
-                        <Action type="link" route="/cat/altro" class="list-group-item">Altro</Action>
+                        <Action type="link" route="/cat/smartwatch"><Text>Smartwatch</Text></Action>
+                        <Action type="link" route="/cat/domotica"><Text>Domotica</Text></Action>
+                        <Action type="link" route="/cat/altro"><Text>Altro</Text></Action>
                     </Column>
                 </Row>
             </Container>
@@ -103,18 +98,18 @@
         </Action>
     </Navigation>
     
-    <Container class="container-fluid p-4">
+    <Container type="fluid" class="container-fluid p-4">
         {{ inner }}
     </Container>
     
     <Navigation class="bg-dark text-white p-5 mt-auto">
-        <Container type="fixed">
+        <Container type="fixed" class="container">
             <Row spacing="4" class="justify-content-between">
                 
                 <Column width="auto">
                     <Media type="image" src="/assets/logo-white.png" height="50px"/>
                     <Text class="mt-3">Seguici sui social:</Text>
-                    <Row spacing="2" class="mt-2">
+                    <Row spacing="2" alignment-content="horizontal" class="mt-2">
                          <Action type="link" route="/social/fb"><Media type="icon" src="bi-facebook" class="h4"/></Action>
                          <Action type="link" route="/social/ig"><Media type="icon" src="bi-instagram" class="h4"/></Action>
                          <Action type="link" route="/social/tg"><Media type="icon" src="bi-telegram" class="h4"/></Action>
@@ -124,30 +119,30 @@
                 <Column width="auto">
                     <Text class="h6 text-uppercase mb-3">Il Mio Account</Text>
                     <Group type="list" class="list-group-flush bg-dark text-white">
-                        <Action type="link" route="/account/profile" class="list-group-item bg-dark text-white">Info personali</Action>
-                        <Action type="link" route="/account/orders" class="list-group-item bg-dark text-white">Miei ordini</Action>
-                        <Action type="link" route="/account/address" class="list-group-item bg-dark text-white">Miei indirizzi</Action>
-                        <Action type="link" route="/account/returns" class="list-group-item bg-dark text-white">Note di Credito</Action>
+                        <Action type="link" route="/account/profile" class="list-group-item bg-dark text-white"><Text>Info personali</Text></Action>
+                        <Action type="link" route="/account/orders" class="list-group-item bg-dark text-white"><Text>Miei ordini</Text></Action>
+                        <Action type="link" route="/account/address" class="list-group-item bg-dark text-white"><Text>Miei indirizzi</Text></Action>
+                        <Action type="link" route="/account/returns" class="list-group-item bg-dark text-white"><Text>Note di Credito</Text></Action>
                     </Group>
                 </Column>
 
                 <Column width="auto">
                     <Text class="h6 text-uppercase mb-3">Informazioni</Text>
                     <Group type="list" class="list-group-flush bg-dark text-white">
-                        <Action type="link" route="/info/contatti" class="list-group-item bg-dark text-white">Contattaci</Action>
-                        <Action type="link" route="/info/chisiamo" class="list-group-item bg-dark text-white">Chi Siamo</Action>
-                        <Action type="link" route="/info/sitemap" class="list-group-item bg-dark text-white">SiteMap</Action>
-                        <Action type="link" route="/info/pagamenti" class="list-group-item bg-dark text-white">Pagamenti</Action>
+                        <Action type="link" route="/info/contatti" class="list-group-item bg-dark text-white"><Text>Contattaci</Text></Action>
+                        <Action type="link" route="/info/chisiamo" class="list-group-item bg-dark text-white"><Text>Chi Siamo</Text></Action>
+                        <Action type="link" route="/info/sitemap" class="list-group-item bg-dark text-white"><Text>SiteMap</Text></Action>
+                        <Action type="link" route="/info/pagamenti" class="list-group-item bg-dark text-white"><Text>Pagamenti</Text></Action>
                     </Group>
                 </Column>
 
                 <Column width="auto">
-                    <Text class="h6 text-uppercase mb-3">Servizi Legale</Text>
+                    <Text class="h6 text-uppercase mb-3">Servizi &amp; Legale</Text>
                     <Group type="list" class="list-group-flush bg-dark text-white">
-                        <Action type="link" route="/legal/terms" class="list-group-item bg-dark text-white">Termini e condizioni d'uso</Action>
-                        <Action type="link" route="/legal/privacy" class="list-group-item bg-dark text-white">Privacy</Action>
-                        <Action type="link" route="/legal/shipping" class="list-group-item bg-dark text-white">Spedizioni  Reso</Action>
-                        <Action type="link" route="/legal/warranty" class="list-group-item bg-dark text-white">Garanzia e Assistenza</Action>
+                        <Action type="link" route="/legal/terms" class="list-group-item bg-dark text-white"><Text>Termini e condizioni d'uso</Text></Action>
+                        <Action type="link" route="/legal/privacy" class="list-group-item bg-dark text-white"><Text>Privacy</Text></Action>
+                        <Action type="link" route="/legal/shipping" class="list-group-item bg-dark text-white"><Text>Spedizioni &amp; Reso</Text></Action>
+                        <Action type="link" route="/legal/warranty" class="list-group-item bg-dark text-white"><Text>Garanzia e Assistenza</Text></Action>
                     </Group>
                 </Column>
             </Row>
